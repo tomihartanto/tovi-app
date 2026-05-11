@@ -142,10 +142,8 @@ npm start     # Production
 
 ## Credits
 
-- **Prompt & Developer:** Tomi Hartanto
-- **AI Assistant:** z.ai GLM-5.1
-
-Project ini dibangun dengan bantuan AI assistant z.ai GLM-5.1 untuk pembuatan kode, debugging, dan optimasi. Seluruh prompt, arsitektur, dan keputusan desain dilakukan oleh Tomi Hartanto.
+- **Developer:** Tomi Hartanto
+- **Built with:** Node.js, Express, Google Gemini API
 
 ## License
 
