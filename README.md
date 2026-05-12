@@ -36,14 +36,15 @@ Chatbot AI berbasis web yang membantu pengguna dengan rekomendasi destinasi wisa
 
 Chatbot ini menggunakan **4 model AI** dari Google Gemini sebagai fallback chain. Jika model utama sedang sibuk atau error, sistem otomatis beralih ke model berikutnya tanpa pengguna perlu melakukan apapun.
 
-| Prioritas | Model | Keterangan |
-|-----------|-------|------------|
-| 1 | Gemini 2.5 Flash | Kualitas terbaik (prioritas utama) |
-| 2 | Gemini 2.0 Flash | Stabil, kualitas bagus |
-| 3 | Gemini 2.0 Flash Lite | Ringan, cepat |
-| 4 | Gemini 1.5 Flash | Fallback terakhir, paling stabil |
+| Prioritas | Model                 | Keterangan                         |
+| --------- | --------------------- | ---------------------------------- |
+| 1         | Gemini 2.5 Flash      | Kualitas terbaik (prioritas utama) |
+| 2         | Gemini 2.0 Flash      | Stabil, kualitas bagus             |
+| 3         | Gemini 2.0 Flash Lite | Ringan, cepat                      |
+| 4         | Gemini 1.5 Flash      | Fallback terakhir, paling stabil   |
 
 **Flow:**
+
 ```
 User kirim pesan
   → Gemini 2.5 Flash (kualitas terbaik)
@@ -57,41 +58,47 @@ User kirim pesan
 
 AI secara otomatis menyesuaikan tingkat kreativitas respons berdasarkan gaya bicara pengguna:
 
-| Deteksi | Temperature | Keterangan |
-|---------|-------------|------------|
-| Faktual ("berapa harga?", "jam berapa?") | 0.4 | Jawaban presisi dan akurat |
-| Umum ("liburan ke Bali") | 0.8 | Seimbang antara akurat dan bervariasi |
-| Kreatif ("rekomendasikan yang unik", "ide honeymoon") | 1.2 | Respons lebih bervariasi dan imajinatif |
+| Deteksi                                               | Temperature | Keterangan                              |
+| ----------------------------------------------------- | ----------- | --------------------------------------- |
+| Faktual ("berapa harga?", "jam berapa?")              | 0.4         | Jawaban presisi dan akurat              |
+| Umum ("liburan ke Bali")                              | 0.8         | Seimbang antara akurat dan bervariasi   |
+| Kreatif ("rekomendasikan yang unik", "ide honeymoon") | 1.2         | Respons lebih bervariasi dan imajinatif |
 
 ## Setup
 
 1. Clone repository
+
 ```bash
 git clone <url-repo>
 cd tovi-app
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 ```
 
 3. Copy file environment
+
 ```bash
 cp .env.example .env
 ```
 
 4. Masukkan API key di `.env`
+
 ```
 GEMINI_API_KEY=your_api_key_here
 ```
 
 5. Jalankan server
+
 ```bash
 npm run dev
 ```
 
 6. Buka di browser
+
 ```
 http://localhost:3000
 ```
@@ -112,20 +119,20 @@ tovi-app/
 
 ## API Endpoints
 
-| Method | Endpoint | Deskripsi |
-|--------|----------|-----------|
-| POST | `/api/chat` | Mengirim percakapan dan mendapatkan respons AI |
+| Method | Endpoint    | Deskripsi                                      |
+| ------ | ----------- | ---------------------------------------------- |
+| POST   | `/api/chat` | Mengirim percakapan dan mendapatkan respons AI |
 
 **Request body:**
+
 ```json
 {
-  "conversation": [
-    { "role": "user", "text": "Rekomendasikan wisata di Bali" }
-  ]
+  "conversation": [{ "role": "user", "text": "Rekomendasikan wisata di Bali" }]
 }
 ```
 
 **Response:**
+
 ```json
 {
   "result": "Berikut rekomendasi wisata di Bali...",
@@ -148,3 +155,5 @@ npm start     # Production
 ## License
 
 MIT
+
+xxx
