@@ -155,5 +155,3 @@ npm start     # Production
 ## License
 
 MIT
-
-xxx
